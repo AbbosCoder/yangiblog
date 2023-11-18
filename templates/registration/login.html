@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} login {% endblock title %}
+
+{% block content %}
+
+<style>
+    form {
+        padding-left: 500px;
+        padding-right: 500px;
+    }
+</style>
+<form method="post">
+    <div class="form-floating mb-3">
+      <h2>Saytga kirish</h2>
+        {% csrf_token %}
+        {{form|crispy }}
+      </div>
+    <button type="submit" class="btn btn-primary">Kirish</button>
+</form>
+    
+{% endblock content %}

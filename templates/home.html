@@ -1,0 +1,71 @@
+{% extends 'base.html'%}
+
+{% block title %} Welcome {% endblock title %}
+
+{% block content %}
+        {% if user.is_authenticated %}
+            <br>
+            <div style="padding-left: 200px;
+            padding-right: 200px;" >
+            <div class="jumbotron"style="
+            background-color: aquamarine;" >
+                <h1 class="display-3">Assalomu alaykum {{user.first_name}} !</h1>
+                <p class="lead">MohirDev platformasidagi "Django 3 – Pythonda Full stack Web Dasturlash" kursini tugatdim va ushbu dasrslar asosida tayyorlangan loyha. </p>
+                <hr class="my-4">
+                <p>Bu platformada siz hisob ochib post joylashingiz mumkin.</p>
+                <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}" role="button">Postlarni ko'rish</a>
+              </div>
+            </div>
+            <br>
+            
+            
+            <div style="width: 80%;
+            height: 500px;
+            padding-left: 320px;">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://w.forfun.com/fetch/cd/cd0ee1c45cb84884275b1596ae289b63.jpeg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>O'rgamchak Odam Yondosh Olamlar aro</h5>
+                      <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://fotooboimoi.ru/upload/iblock/38f/38fc7d5294eecfa6c3b2094677668da4.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Basketbol</h5>
+                      <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://i.imgur.com/t3UdDv2.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Galaxy</h5>
+                      <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </button>
+              </div>
+            </div>
+        {% else %}
+            <br>
+            <h1>Saytda ro'yxatdan o'tmagansiz!</h1>
+        {% endif %}    
+   
+
+      
+{% endblock content %}

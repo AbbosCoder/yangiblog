@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Taxrirlash{% endblock title %}
+{% load static %}
+{%block extrahead%}
+  <script>window.CKEDITOR_BASEPATH = 'staticfiles/ckeditor/ckeditor'; </script>
+  {{block.super}}
+{%endblock%}  
+{% block content %}
+
+<style>
+    form {
+        padding-left: 500px;
+        padding-right: 500px;
+    }
+</style>
+<form method="post"  enctype="multipart/form-data"> {% csrf_token %}
+    <div class="form-floating mb-3">
+      <h2>Postni taxrirlash</h2>
+        {{form.media}}
+        {{form|crispy }}
+      </div>
+    <button type="submit" class="btn btn-success">Saqlash</button>
+</form>
+    
+{% endblock content %}

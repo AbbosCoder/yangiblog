@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} My Profil {% endblock title %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <div style="padding-left: 500px;
+    padding-right: 500px;">
+        <h2>Welcome, {{ user.get_full_name }}!</h2>
+        <p>Username: {{ user.username }}</p>
+        <p>Email: {{ user.email }}</p>
+
+        {% if user.profile.picture %}
+            <img src="{{ user.rasm.url }}" alt="Profile Picture">
+        {% else %}
+            <p>No profile picture available.</p>
+        {% endif %}
+    </div>
+    {% else %}
+        <p>Please log in to view your profile.</p>
+    {% endif %}
+{% endblock content %}
